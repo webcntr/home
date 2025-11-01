@@ -5,19 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WebsiteCntr</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="styleA.css">
-  <link rel="stylesheet" href="styleB.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!--Skrypt dodający animację x-->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <!--Nawigacja -->
+
+<!--Navigation -->
 <header class="navbar">
  <div class="logo-section">
   <a href="#">
@@ -39,55 +35,58 @@
       <a href="https://discord.gg/P4227m5w"><i class="fa-brands fa-discord"></i><span class="tooltip">Discord</span></a>
   </nav>
 </header>
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <div class="hero-animation">
-        <img src="images/bondzai.png" class="">
-      </div>
-      <div class="hero-text-box">
-        <h1 class="hero-heading" id="typewriter"></h1>
-      </div>
+
+<!--Hero-->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-animation">
+      <img src="images/bondzai.png" class="">
     </div>
-  </section>
-
-
-  <section class="tiles-section" id="projects">
-    <div class="tiles-grid">
-      <div class="tile"><img src="images/jap1.png"></img></div>
-      <div class="tile"><img src="images/jap2.png"></img></div>
-      <div class="tile"><img src="images/jap3.png"></img></div>
-      <div class="tile"><img src="images/jap4.png"></img></div>
-      <div class="tile"><img src="images/jap5.png"></img></div>
-      <div class="tile"><img src="images/jap6.png"></img></div>
-    </div>
-  </section>
-
-
-  <div class="testimonial-container">
-    <div class="testimonial-box" id="box-current">
-      <h2>About Us</h2>
-        <div class="subtitle"></div>
-        <p class="testimonial"></p>
-        <div class="arrows">
-        <span class="arrow" id="next">&#8594;</span>
-        </div>
+    <div class="hero-text-box">
+      <h1 class="hero-heading" id="typewriter"></h1>
     </div>
   </div>
+</section>
 
+<!--Tiles-->
+<section class="tiles-section" id="projects">
+  <div class="tiles-grid">
+    <div class="tile"><img src="images/jap1.png"></img></div>
+    <div class="tile"><img src="images/jap2.png"></img></div>
+    <div class="tile"><img src="images/jap3.png"></img></div>
+    <div class="tile"><img src="images/jap4.png"></img></div>
+    <div class="tile"><img src="images/jap5.png"></img></div>
+    <div class="tile"><img src="images/jap6.png"></img></div>
+  </div>
+</section>
 
-  <section class="footer">
-      <ul class="police_box">
-          <li class="police_btn">© WebsiteCntr</li>
-          <li class="police_btn"><a href="#"><i class="fa-solid fa-key"></i></a></li>
-          <li class="police_btn"><a href="#projects"><i class="fa-solid fa-diagram-project"></i></a></li>
-          <li class="police_btn"><a href="#box-current"><i class="fa-solid fa-address-card"></i></a></li>
-          <li class="police_btn"><a href="https://www.instagram.com/web_cent_wc/"><i class="fa-brands fa-instagram"></i></a></li>
-          <li class="police_btn"><a href="https://discord.gg/P4227m5w"><i class="fa-brands fa-discord"></i></a></li>
-      </ul>
-  </section>
+<!--About Us-->
+<div class="testimonial-container">
+  <div class="testimonial-box" id="box-current">
+    <h2>About Us</h2>
+      <div class="subtitle"></div>
+      <p class="testimonial"></p>
+      <div class="arrows">
+      <span class="arrow" id="next">&#8594;</span>
+      </div>
+  </div>
+</div>
+
+<!--Footer-->
+<section class="footer">
+    <ul class="police_box">
+        <li class="police_btn">© WebsiteCntr</li>
+        <li class="police_btn"><a href="#"><i class="fa-solid fa-key"></i></a></li>
+        <li class="police_btn"><a href="#projects"><i class="fa-solid fa-diagram-project"></i></a></li>
+        <li class="police_btn"><a href="#box-current"><i class="fa-solid fa-address-card"></i></a></li>
+        <li class="police_btn"><a href="https://www.instagram.com/web_cent_wc/"><i class="fa-brands fa-instagram"></i></a></li>
+        <li class="police_btn"><a href="https://discord.gg/P4227m5w"><i class="fa-brands fa-discord"></i></a></li>
+    </ul>
+</section>
  
-
+<!--Scripts-->
 <script>
+  //First Page and hamburger
   window.addEventListener('DOMContentLoaded', function() 
   {
   window.scrollTo(0, 0);
@@ -135,15 +134,29 @@ document.querySelectorAll('.nav-links a').forEach(link =>
   {
     if(navLinks.classList.contains('active'))
     {
-      navLinks.classList.remove('active');   // zamyka menu
-      hamburger.classList.remove('active');  // resetuje hamburger
-      document.body.style.overflow = '';     // przywraca scroll
+      navLinks.classList.remove('active');   
+      hamburger.classList.remove('active');  
+      document.body.style.overflow = '';     
     }
   });
 });
 
 
-
+//First Page text
+const text = "WebCntr - Crafiting Wesites with Passion.";
+const target = document.getElementById("typewriter");
+let i = 0;
+function typeWriter() 
+{
+  if (i < text.length) 
+  {
+    target.textContent += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 55); 
+  }
+}
+window.onload = typeWriter;
+});
 
 const testimonials = [
   {
@@ -180,7 +193,6 @@ function renderBox(index)
   box.classList.add("fade-out");
   setTimeout(() => 
   {
-    // Zmień tekst po wygaszeniu
     box.querySelector(".subtitle").textContent = testimonials[index].subtitle;
     box.querySelector(".testimonial").innerHTML = testimonials[index].text.map(line => `<div>${line}</div>`).join("");
     // Fade in
@@ -200,36 +212,12 @@ document.getElementById("next").addEventListener("click", function()
   renderBox(currentIndex);
 });
 
-// Inicjalizacja
-window.onload = () => 
-{
-  const box = document.getElementById("box-current");
- box.querySelector(".subtitle").textContent = testimonials[currentIndex].subtitle;
-  box.querySelector(".testimonial").innerHTML = testimonials[currentIndex].text.map(line => `<div>${line}</div>`).join("");
-};
 
-
-
-// Typowany tekst
-const text = "WebCntr - Crafiting Wesites with Passion.";
-// Znajdź element z napisem
-const target = document.getElementById("typewriter");
-let i = 0;
-function typeWriter() {
-  if (i < text.length) {
-    target.textContent += text.charAt(i);
-    i++;
-    setTimeout(typeWriter, 55); // Szybkość efektu
-  }
-}
-window.onload = typeWriter;
-
+// Inicjalization
+document.addEventListener("DOMContentLoaded", function() {
+  renderBox(currentIndex);
 });
 
-
-
-
 </script>
-
 </body>
 </html>
