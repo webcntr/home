@@ -183,7 +183,6 @@ const testimonials = [
   }
 ];
 
-
 let currentIndex = 0;
 
 function renderBox(index) 
@@ -205,7 +204,6 @@ function renderBox(index)
   }, 400);
 }
 
-
 document.getElementById("next").addEventListener("click", function() 
 {
   currentIndex = (currentIndex === testimonials.length - 1) ? 0 : currentIndex + 1;
@@ -213,7 +211,7 @@ document.getElementById("next").addEventListener("click", function()
 });
 
 
-// Inicjalization
+// Inicialization
 document.addEventListener("DOMContentLoaded", function() {
   renderBox(currentIndex);
 });
