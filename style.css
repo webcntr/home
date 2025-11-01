@@ -168,6 +168,9 @@ body {
 @keyframes blink {
   50% {opacity: 0;}
 }
+
+
+
 /*Styl hamburgera*/
 .hamburger {
   cursor: pointer;
@@ -314,7 +317,6 @@ body {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-
 }
 
 .police_box{
@@ -396,10 +398,9 @@ body {
     align-items: center;
   }
   .hero-heading {
-    font-size: 3rem;
+    font-size: 2.25rem;
   }
 }
-
 
 
 @media (max-width: 430px) {
