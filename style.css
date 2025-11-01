@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Open+Sans:wght@400;600&display=swap');
+/*Podstawowe dane*/
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*Szkielet strony*/
+body {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    color: white;
+    min-height: 100vh;
+    background-color: white
+}
+
+
+::-webkit-scrollbar-track {
+  background: white; 
+}
+ 
+
+::-webkit-scrollbar-thumb {
+  background: #333; 
+}
+
+
+/*Nawigacja po stronie, główne rozmieszczenie elementów x*/
+.navbar {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 15px 40px;
+  gap: 50px;
+  position: fixed;  
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/*Umieszczenie hamburgera bardziej na lewo*/
+.navbar .hamburger {
+  margin-left: auto;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo-switcher {
+  position: relative;
+  display: inline-block;
+  width: 70px;   /* Dostosuj do rozmiaru loga WC */
+  height: 70px;
+}
+
+.logo {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/*Elementy w nawigacji */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  position: fixed;
+  inset: 0; 
+  background-color: #000;
+  z-index: 999;
+}
+
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+.nav-links a i {
+    font-size: 1.2rem;
+}
+
+/*Styl hamburgera po kliknięciu - menu mobilne*/
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; 
+    background-color: #000;
+    z-index: 999;
+    gap: 30px;
+}
+
+.nav-links.active a:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: scale(1.05);
+}
+
+.nav-links.active a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px; /* odstęp między ikoną a tooltipem */
+  color: #fff;
+  font-size: 2.5rem; /* większe ikonki */
+  margin: 20px 0; /* większy odstęp między przyciskami */
+  padding: 15px 20px; /* większa strefa kliknięcia */
+  border-radius: 8px; /* lekko zaokrąglone dla estetyki */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links.active a .tooltip {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%) translateX(20px);
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+  padding: 8px 14px; /* większy padding */
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  font-size: 1.2rem; /* większy font */
+  font-weight: 500;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.nav-links.active a:hover .tooltip {
+  transform: translateY(-50%) translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#typewriter::after {
+  content: '|';
+  animation: blink 0.75s steps(1) infinite;
+  color: #666;
+}
+@keyframes blink {
+  50% {opacity: 0;}
+}
+/*Styl hamburgera*/
+.hamburger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  padding:20px;
+  gap: 5px;
+  z-index: 1000;
+}
+
+.hamburger .line {
+    display: block;
+    height: 2px;
+    border-radius: 2px;
+    transition: all 0.3s ease; 
+    background-color: #333;
+}
+
+.hamburger .line-top {
+  width: 25px;
+}
+
+.hamburger .line-bottom {
+  width: 18px;
+}
+
+.hamburger.active .line-top {
+    transform: rotate(-90deg) translate(-4px, -10px);
+    background-color: #fff;
+    border: 0.1px solid #fff;
+    transform-origin: center;
+}
+
+.hamburger.active .line-bottom {
+    transform: rotate(90deg) translate(0px, 15px);
+    background-color: #fff;
+    border: 0.1px solid #fff;
+    transform-origin: center;
+}
+
+.nav-links.active + .hamburger .line {
+  background-color: #fff;
+}
+
+
+/*Sekcja motto z animacją*/
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #fff;
+  padding: 80px 40px;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* responsywne */
+  gap: 20px;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.hero-animation {
+  flex: 1 1 400px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-animation img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  display: block;
+}
+
+.hero-text-box {
+  flex: 1 1 400px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 320px;
+}
+
+.hero-heading {
+  font-size: 3.5rem;
+  font-weight: 200;
+  color: #222;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+
+.tiles-grid {
+  display: grid;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tile {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.tile img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+
+.tile:hover img {
+  filter: brightness(1.1);
+}
+
+
+.tiles-grid:hover .tile:not(:hover) {
+  filter: brightness(0.6) blur(4px);
+  transform: scale(0.98);
+}
+
+
+/*Górna stopka*/
+.footer{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.police_box{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    gap: 20px;
+}
+
+.police_btn{
+    color: black;
+}
+
+.police_btn a{
+    color: black;
+    text-decoration: none;
+}
+
+.testimonial-container {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  min-height: 350px;
+}
+
+.testimonial-box {
+  background: #fff;
+  padding: 32px 22px;
+  width: 500px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  transition: opacity 0.4s, transform 0.4s;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.testimonial-box.fade-out {
+  opacity: 0;
+  transform: translateX(-80px);
+}
+
+.testimonial-box.fade-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.arrows {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 26px;
+}
+
+.arrow {
+  font-size: 2.1rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.arrow:hover {
+  color: #888;
+}
+
+
+/*RESPONSYWNOŚĆ STRONY*/
+
+/*Responsywność motto*/
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+  }
+  .hero-content {
+    flex-direction: column;
+  }
+  .hero-text-box {
+    text-align: center;
+    align-items: center;
+  }
+  .hero-heading {
+    font-size: 3rem;
+  }
+}
+
+
+
+@media (max-width: 430px) {
+  .nav-links.active a {
+    font-size: 2rem;
+    padding: 12px 15px;
+  }
+
+  .nav-links.active a .tooltip {
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+}
+
+/*Responsywność odnośnie nawigacji, humburger*/
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+    .hamburger .line {
+        display: block;
+        background-color: #333;
+    }
+}
+
+/* Responsywność boksów tile*/
+@media (max-width: 1300px) {
+  .tiles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 850px) {
+  .tiles-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 850px) {
+  .onas_grid {
+    grid-template-columns: 1fr;
+  }
+}
